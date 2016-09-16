@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Test script for assignment 5.
+#
+# Set some environment variables. (But one of them is commented
+# out as a test. Try it both commented and uncommented.)
+#export _4_=10
+export _8_=blue
+export _9_=carriage
+#
+# Now run the program with three command-line arguments and I/O redirection.
+./hw5 Mr. George Washington < in_letter.txt > out_letter.txt
+# Clear the environment variables.
+unset _4_
+unset _8_
+unset _9_

@@ -1,0 +1,101 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <title>CS 59000-01 - Homework 3</title>
+   <meta name="description" content="CS 59000-01 homework 3.">
+   <meta name="author" content="Roger L. Kraft">
+   <link rel="stylesheet" href="http://math.purduecal.edu/~rlkraft/roger.css" type="text/css">
+   <link rel="stylesheet" href="http://math.purduecal.edu/~rlkraft/roger-printer.css" type="text/css" media="print">
+   <!--[if lt IE 9]>
+       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+</head>
+
+<body>
+<header>
+   <a href="http://math.purduecal.edu/~rlkraft/" title="Roger L. Kraft">Roger L. Kraft</a>
+</header>
+
+<nav>
+   <div class="nav-block">
+      <a href="../cs50300.html">CS 59000-01</a><br>
+      <a href="../syllabus.html">Syllabus</a><br>
+      <a href="../class.html">Lectures and Readings</a><br>
+      <a href="../homework.html">Homework Assignments</a><br>
+   </div>
+   <div class="nav-block">
+      <a href="http://cs.purduecal.edu/~rlkraft/roger.html">Roger Kraft</a><br>
+      <a href="http://www.purduecal.edu/mcss/">Math & CS Department</a><br>
+      <a href="http://www.purduecal.edu/ems/">College of EMS</a><br>
+      <a href="http://www.purduecal.edu/">Purdue University Calumet</a><br>
+   </div>
+</nav>
+
+<div id="Content">
+<h1>
+59000-01 - Programming Assignment 3
+</h1>
+
+<p>
+This assignment has four parts. The four parts are Programming Exercises 3.11, 3.18, 3.13, and implementing <code>touch</code>, from the end of Chapter 3 in the textbook (pages 105-106).
+Please download this <a href="hw3.zip">zip file</a>.
+Be sure to review the homework <a href="http://math.purduecal.edu/~rlkraft/cs50300/criteria.html">grading criteria</a>.
+This assignment is due Tuesday, March 3.
+</p>
+
+<p>
+Part 1: As the book mentions on page 95, ls2 has a bug. Write a program called <code>ls3.c</code> that fixes this bug. In the opening comment of your file <code>ls3.c</code>, put an explanation of what caused the bug and what you did to fix it. (Don't write just two sentences. Write a detailed explanation of the bug and its solution.)
+</p>
+
+<p>
+Part 2: Do a slightly modified version of Programming Exercise 3.18 on page 106 of the textbook. Modify your <code>ls3.c</code>, and call it <code>ls4.c</code>, so that it takes a command-line option <code>-R</code> that means recursive directory listings (you are really implementing the command "ls -alR" since we are outputting directory listings in the long format).
+</p>
+
+<p>
+Part 3: Do a slightly modified version of Programming Exercise 3.13 on page 106. Modify your program <code>cp1a.c</code> (from Assignment 2), and call it <code>cp2.c</code>, so that it implements copying files to a directory. The syntax of your command should be
+</p>
+<pre>
+        cp2 [-n] SOURCE    DEST
+        cp2 [-n] SOURCE... DIRECTORY
+</pre>
+<p>
+Your program should copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY (notice that the second line is what's new).
+</p>
+
+<p>
+Part 4: Write a simplified version of the <a href="http://man7.org/linux/man-pages/man1/touch.1.html">touch</a> command. The syntax for your command should be
+</p>
+<pre>
+        touch FILE...
+</pre>
+<p>
+Your program should update the access and modification times of each FILE to the current time. Also, a FILE argument that does not exist is created empty. (Make sure your program fails with appropriate error messages. For example, if a user tries to touch a file that they do not have permission to modify.)
+</p>
+
+<p>
+Write a <code>Makefile</code> that builds your programs for the above four parts. Make sure your make file works correctly. I will compile your code using your make file. If it doesn't work, I won't be able to grade your assignment.
+</p>
+
+<p>
+<a href="http://cs.purduecal.edu/~rlkraft/cs50300/handin.html">Turn in</a> a zip file called <code>CS59000Hw3Surname.zip</code> (where <code>Surname</code> is your last name) containing your C programs <code>ls3.c</code>, <code>ls4.c</code>, <code>cp2.c</code>, <code>touch.c</code>, and your make file <code>Makefile</code>.
+</p>
+
+<p>
+This assignment is due Tuesday, March 3.
+</p>
+
+</div>
+
+<footer>
+   <script language="JavaScript" type="text/javascript">
+      document.write("<font size=\"-2\"><i>Last modified on " + document.lastModified + ".<\/i><\/font>");
+   </script>
+   <br>
+   <a href="mailto:roger@purduecal.edu"><font size="-2"><i>compliments and criticisms</i></font></a>
+</footer>
+
+</body>
+</html>

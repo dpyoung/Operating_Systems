@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <title>CS 59000-01 - Homework 5</title>
+   <meta name="description" content="CS 59000-01 homework 5.">
+   <meta name="author" content="Roger L. Kraft">
+   <link rel="stylesheet" href="http://math.purduecal.edu/~rlkraft/roger.css" type="text/css">
+   <link rel="stylesheet" href="http://math.purduecal.edu/~rlkraft/roger-printer.css" type="text/css" media="print">
+   <!--[if lt IE 9]>
+       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+</head>
+
+<body>
+<header>
+   <a href="http://math.purduecal.edu/~rlkraft/" title="Roger L. Kraft">Roger L. Kraft</a>
+</header>
+
+<nav>
+   <div class="nav-block">
+      <a href="../cs50300.html">CS 59000-01</a><br>
+      <a href="../syllabus.html">Syllabus</a><br>
+      <a href="../class.html">Lectures and Readings</a><br>
+      <a href="../homework.html">Homework Assignments</a><br>
+   </div>
+   <div class="nav-block">
+      <a href="http://cs.purduecal.edu/~rlkraft/roger.html">Roger Kraft</a><br>
+      <a href="http://www.purduecal.edu/mcss/">Math & CS Department</a><br>
+      <a href="http://www.purduecal.edu/ems/">College of EMS</a><br>
+      <a href="http://www.purduecal.edu/">Purdue University Calumet</a><br>
+   </div>
+</nav>
+
+<div id="Content">
+<h1>
+59000-01 - Programming Assignment 5
+</h1>
+
+<p>
+In this assignment you will write a C <a href="http://en.wikipedia.org/wiki/Filter_%28software%29">filter program</a> that processes input text by expanding <a href="http://en.wikipedia.org/wiki/Macro_(computer_science)">macros</a> found in the text. The values that the <a href="http://foldoc.org/index.cgi?query=macro&action=Search">macros</a> will expand to will come from either <a href="http://en.wikipedia.org/wiki/Command-line_interface#Arguments">command-line arguments</a> or <a href="http://en.wikipedia.org/wiki/Environment_variable">environment</a> <a href="http://foldoc.org/?query=environment+variable">variables</a>.
+Please download this <a href="hw5.zip">zip file</a>.
+Be sure to review the homework <a href="http://math.purduecal.edu/~rlkraft/cs50300/criteria.html">grading criteria</a>.
+This assignment is due Tuesday, April 21.
+</p>
+
+<p>
+Write a C program, called <code>hw5.c</code>, that reads from <a href="http://man7.org/linux/man-pages/man3/stdin.3.html">standard input</a> and writes to <a href="http://man7.org/linux/man-pages/man3/stdout.3.html">standard output</a>. Any character read from standard input that is not part of a macro should be written directly to standard output. When your program finds a macro in its input, it will "expand" (i.e., replace) the macro with a certain text string. In this assignment, a <em>macro</em> is defined to be a string of the form <code>"#1#"</code>, or <code>"#2#"</code>, or <code>"#3#"</code>, etc., up to <code>"#9#"</code>, that is, there are nine possible macros. When your program finds a macro string of the form <code>"#n#"</code> (where <code>n</code> is a single digit integer) and if <code>n &lt; argc</code>, then your program should write to standard output, in place of the macro string, the n'th <a href="http://publications.gbdirect.co.uk/c_book/chapter10/arguments_to_main.html">command line argument</a> string. If <code>n &gt;= argc</code>, then your program should use the Standard C Library function <code><a href="http://man7.org/linux/man-pages/man3/getenv.3.html">getenv()</a></code> to see if there is an <a href="http://www.informit.com/guides/content.aspx?g=cplusplus&seqNum=136">environment variable</a> named <code>_n_</code> and if there is, use its string value to expand the macro. If there is no such environment variable, then your program should write the macro string unchanged to standard output.
+</p>
+
+<p>
+In the <a href="hw5.zip">zip file</a> for this assignment you will find a sample text file, <code>in_letter.txt</code>, that you can test your program with. Also in the zip file is a bash script file, <code>test_script</code>, that automates the testing of your program with the sample input file (the script file demonstrates how to set environment variables and how to use <a href="http://foldoc.org/I%2fO+redirection">I/O redirection</a> to process files). Another text file, <code>out_letter.txt</code>, contains the correct output that your program should produce when the script file is run. The included script and test files are not a very extensive test of your program. You should create better, more complete, tests.
+</p>
+
+<p>
+<a href="http://cs.purduecal.edu/~rlkraft/cs50300/handin.html">Turn in</a> a zip file called <code>CS59000Hw5Surname.zip</code> (where <code>Surname</code> is your last name) containing your C program <code>hw5.c</code> that solves this problem, a <code>Makefile</code> that compiles your program, and any test and/or script files that you want to include.
+</p>
+
+<p>
+This assignment is due Tuesday, April 21.
+</p>
+
+<p>
+Below are some references about <a href="http://en.wikipedia.org/wiki/Environment_variables">environment variables</a>, the <code>getenv()</code> function, and <a href="http://en.wikipedia.org/wiki/Redirection_%28Unix%29">I/O redirection</a>.
+</p>
+
+<ul>
+<li><a href="http://www.ibm.com/developerworks/library/l-bash/">Bash by example, Part 1</a></li>
+<li><a href="http://heather.cs.ucdavis.edu/~matloff/UnixAndC/Unix/ShellIntro.pdf">A Brief Introduction to the Use of Shell Variables</a></li>
+<li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unix8.html">UNIX Tutorial - UNIX Variables</a></li>
+<li>In the <a href="http://man7.org/linux/man-pages/man1/bash.1.html#SHELL_BUILTIN COMMANDS">bash(1)</a> man page, look up the builtin commands <code>export</code>, <code>set</code>, and <code>unset</code>.</li>
+<li><a href="http://www.cplusplus.com/reference/cstdlib/getenv/">getenv()</a></li>
+<li><a href="http://en.cppreference.com/w/c/program/getenv">getenv()</a></li>
+<li><a href="http://pubs.opengroup.org/stage7tc1/functions/getenv.html">getenv()</a></li>
+<li><a href="http://linuxcommand.org/lc3_lts0070.php">I/O Redirection: Bash Shell Tutorial</a></li>
+<li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unix3.html">UNIX Tutorial - Redirection</a></li>
+<li><a href="http://www.linuxdevcenter.com/pub/a/linux/lpt/13_01.html">Using Standard Input and Output</a></li>
+</ul>
+
+</div>
+
+<footer>
+   <script language="JavaScript" type="text/javascript">
+      document.write("<font size=\"-2\"><i>Last modified on " + document.lastModified + ".<\/i><\/font>");
+   </script>
+   <br>
+   <a href="mailto:roger@purduecal.edu"><font size="-2"><i>compliments and criticisms</i></font></a>
+</footer>
+
+</body>
+</html>

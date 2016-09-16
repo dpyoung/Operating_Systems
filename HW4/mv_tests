@@ -1,0 +1,30 @@
+cp mv.c      temp1
+cp ls5.c     temp2
+cp mv_tests  temp3
+ls      >    temp4
+cal     >    temp5
+gcc -v 2>    temp6
+./mv
+./mv    temp1
+./mv -n temp1
+./mv    temp1 temp2         temp3
+./mv    temp1 temp2 temp3   temp4
+./mv    temp1 temp2 temp3   temp7
+./mv    temp7 temp6
+./mv -n temp7 temp6
+./mv -n temp5 temp6
+./mv    temp1 temp7
+./mv    temp2 temp7
+./mv -n temp3                    test_mv_directory
+./mv -n temp3 temp4 temp5        test_mv_directory
+./mv    temp6 temp7              test_mv_directory
+./mv    test_mv_directory/temp3  test_mv_directory/temp8
+./mv    test_mv_directory/temp4  test_mv_directory/temp9
+./mv -n test_mv_directory/temp5  test_mv_directory/temp9
+./mv -n test_mv_directory/temp9  test_mv_directory
+./mv -n test_mv_directory/temp9  .
+./mv -n test_mv_directory/temp8  ..
+./mv -n test_mv_directory/temp7  ./temp0
+./mv -n test_mv_directory/temp6  ./temp0
+./mv -n test_mv_directory/temp6  temp1
+./mv    test_mv_directory        test_mv_directory_2

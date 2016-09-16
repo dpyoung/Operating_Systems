@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <title>CS 59000-01 - Homework 4</title>
+   <meta name="description" content="CS 59000-01 homework 4.">
+   <meta name="author" content="Roger L. Kraft">
+   <link rel="stylesheet" href="http://math.purduecal.edu/~rlkraft/roger.css" type="text/css">
+   <link rel="stylesheet" href="http://math.purduecal.edu/~rlkraft/roger-printer.css" type="text/css" media="print">
+   <!--[if lt IE 9]>
+       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+</head>
+
+<body>
+<header>
+   <a href="http://math.purduecal.edu/~rlkraft/" title="Roger L. Kraft">Roger L. Kraft</a>
+</header>
+
+<nav>
+   <div class="nav-block">
+      <a href="../cs50300.html">CS 59000-01</a><br>
+      <a href="../syllabus.html">Syllabus</a><br>
+      <a href="../class.html">Lectures and Readings</a><br>
+      <a href="../homework.html">Homework Assignments</a><br>
+   </div>
+   <div class="nav-block">
+      <a href="http://cs.purduecal.edu/~rlkraft/roger.html">Roger Kraft</a><br>
+      <a href="http://www.purduecal.edu/mcss/">Math & CS Department</a><br>
+      <a href="http://www.purduecal.edu/ems/">College of EMS</a><br>
+      <a href="http://www.purduecal.edu/">Purdue University Calumet</a><br>
+   </div>
+</nav>
+
+<div id="Content">
+<h1>
+59000-01 - Programming Assignment 4
+</h1>
+
+<p>
+This assignment has two parts. The two parts are essentially Programming Exercises 4.16 and 4.20 from the end of Chapter 4 in the textbook (page 138).
+Please download this <a href="hw4.zip">zip file</a>.
+Be sure to review the homework <a href="http://math.purduecal.edu/~rlkraft/cs50300/criteria.html">grading criteria</a>.
+This assignment is due Thursday, March 19.
+</p>
+
+<p>
+Part 1: Do a slightly modified version of Programming Exercise 4.20 on page 138 of the textbook. Write a program called <code>ls5.c</code> that adds the <code>-i</code> option to your <code>ls4.c</code> program from Part 2 of Assignment 3. The syntax of your new command should be
+</p>
+<pre>
+        ls5 [-i] [-R] [DIRECTORY]...
+</pre>
+<p>
+Your are still implementing the "long" listing format. If there are no DIRECTORY arguments, your program should default to the current working directory. Let command-line options be used in any order and also let them be combined. So if your program is invoked with the command <code>ls5 -iR</code> (or with <code>ls5 -Ri</code>), then it should do a recursive directory listing of the current directory showing inode values. Here is the full syntax of your command.
+</p>
+<pre>
+        ls5 [-i | -R | -i -R | -R -i | -iR | -Ri] [DIRECTORY]...
+</pre>
+<p>
+In a Linux man page, this would be denoted this way.
+</p>
+<pre>
+    NAME
+
+       ls5 - limited implementation of list directory contents
+
+    SYNOPSIS
+
+        ls5 [OPTION]... [DIRECTORY]...
+
+
+    DESCRIPTION
+
+        -i
+           print the index number of each file
+
+        -R
+           list subdirectories recursively
+</pre>
+<p>
+</p>
+
+
+<p>
+Part 2: Do a slightly modified version of Programming Exercise 4.16 on page 138. Write a program <code>mv.c</code> that implements a simplified version of the <code>mv</code> command. The syntax of your command should be
+</p>
+<pre>
+        mv [-n] SOURCE    DEST
+        mv [-n] SOURCE... DIRECTORY
+</pre>
+<p>
+Your program should move SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY. The <code>-n</code> option should implement "no-clobber".
+</p>
+
+<p>
+Write a <code>Makefile</code> that builds your <code>ls5.c</code> and <code>mv.c</code> programs. Make sure your make file works correctly. I will compile your code using your make file. If it doesn't work, I won't be able to grade your assignment.
+</p>
+
+<p>
+<a href="http://cs.purduecal.edu/~rlkraft/cs50300/handin.html">Turn in</a> a zip file called <code>CS59000Hw4Surname.zip</code> (where <code>Surname</code> is your last name) containing your C programs <code>ls5.c</code> and <code>mv.c</code> and your make file <code>Makefile</code>.
+</p>
+
+<p>
+This assignment is due Thursday, March 19.
+</p>
+
+</div>
+
+<footer>
+   <script language="JavaScript" type="text/javascript">
+      document.write("<font size=\"-2\"><i>Last modified on " + document.lastModified + ".<\/i><\/font>");
+   </script>
+   <br>
+   <a href="mailto:roger@purduecal.edu"><font size="-2"><i>compliments and criticisms</i></font></a>
+</footer>
+
+</body>
+</html>
